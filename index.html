@@ -1,12 +1,12 @@
 <!DOCTYPE html><html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Happy Belated Birthday Maryam ❤️</title><style>
+<title>Happy Belated Birthday Maryam 💙</title><style>
 
 body{
 margin:0;
 padding:0;
-background:linear-gradient(135deg,#ff758c,#ff7eb3);
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
 font-family:'Courier New',monospace;
 color:white;
 text-align:center;
@@ -18,6 +18,7 @@ overflow-x:hidden;
 h1{
 margin-top:60px;
 font-size:45px;
+color:#a6d8ff;
 }
 
 /* Letter Card */
@@ -27,10 +28,10 @@ width:80%;
 max-width:700px;
 margin:40px auto;
 padding:30px;
-background:rgba(255,255,255,0.15);
+background:rgba(0,150,255,0.15);
 border-radius:20px;
 backdrop-filter:blur(10px);
-box-shadow:0 10px 30px rgba(0,0,0,0.2);
+box-shadow:0 10px 30px rgba(0,120,255,0.5);
 animation:openLetter 2s ease forwards;
 transform:scale(0);
 }
@@ -50,7 +51,7 @@ white-space:pre-line;
 .cursor{
 display:inline-block;
 width:3px;
-background:white;
+background:#a6d8ff;
 margin-left:4px;
 animation:blink 1s infinite;
 }
@@ -66,7 +67,7 @@ animation:blink 1s infinite;
 .heart{
 position:fixed;
 bottom:-20px;
-color:red;
+color:#4da6ff;
 font-size:20px;
 animation:floatUp 6s linear infinite;
 }
@@ -99,33 +100,45 @@ left:0;
 pointer-events:none;
 }
 
-</style></head><body><h1>💖 Happy Belated Birthday Maryam 🎂</h1><div class="card">
+</style></head><body><h1>💙 Happy Belated Birthday Maryam 🎂</h1><div class="card">
 <div id="message"></div><span class="cursor"></span>
-</div><!-- Background Music --><audio autoplay loop>
+</div><audio autoplay loop>
 <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_8b6f3e9f16.mp3" type="audio/mp3">
 </audio><canvas id="fireworks"></canvas>
 
 <script>
 
-/* Typing Message */
+/* LETTER TEXT */
 
 const text = `Happy Belated Birthday Maryam ❤️
+
 Even though your special day has already passed, I still wanted to create something meaningful for you, something small but sincere that carries my wishes and appreciation for the wonderful person you are.
+
 Sometimes words cannot fully explain how much someone means, but I still wanted to try. You are someone truly special, someone whose kindness, patience, and warmth can make a simple moment feel beautiful.
+
 On this new chapter of your life, I pray that Allah fills your days with peace, your heart with joy, and your path with success and blessings.
+
 May this year bring you more laughter, more unforgettable memories, more opportunities, and many moments that remind you how valued and appreciated you truly are.
+
 Even if this message comes after your birthday has passed, the sincerity of the wishes remains the same.
+
 So once again from the heart:
+
 Happy Belated Birthday Maryam ❤️
+
 May the days ahead bring you happiness, peace, success, and beautiful surprises.
-And may every new day remind you that you are someone truly special and appreciated more than you realize. 🌹
-Thank you for being such a wonderful person and for bringing warmth and positivity wherever you go.
-Today may be belated, but the good wishes for you will always remain right on time.
+
+And may every new day remind you that you are someone truly special and appreciated more than you realize.
+
 Once again,
-Happy Belated Birthday Maryam 🎂❤️
-`;
+
+Happy Belated Birthday Maryam 🎂💙`;
+
+
+/* TYPEWRITER EFFECT */
 
 let index=0;
+
 function typeWriter(){
 if(index < text.length){
 document.getElementById("message").innerHTML += text.charAt(index);
@@ -133,37 +146,47 @@ index++;
 setTimeout(typeWriter,35);
 }
 }
+
 typeWriter();
 
-/* Floating Hearts */
+
+/* FLOATING HEARTS */
 
 setInterval(()=>{
 let heart=document.createElement("div");
 heart.className="heart";
-heart.innerHTML="❤️";
+heart.innerHTML="💙";
 heart.style.left=Math.random()*100+"vw";
 heart.style.fontSize=(15+Math.random()*25)+"px";
+
 document.body.appendChild(heart);
 
-setTimeout(()=>{heart.remove()},6000);
+setTimeout(()=>{
+heart.remove();
+},6000);
 
 },500);
 
-/* Falling Roses */
+
+/* FALLING ROSES */
 
 setInterval(()=>{
 let rose=document.createElement("div");
 rose.className="rose";
 rose.innerHTML="🌹";
 rose.style.left=Math.random()*100+"vw";
-rose.style.fontSize=(18+Math.random()*20)+"px";
+rose.style.fontSize=(18+Math.random()*20)+"px;
+
 document.body.appendChild(rose);
 
-setTimeout(()=>{rose.remove()},8000);
+setTimeout(()=>{
+rose.remove();
+},8000);
 
 },700);
 
-/* Fireworks */
+
+/* FIREWORKS */
 
 const canvas=document.getElementById("fireworks");
 const ctx=canvas.getContext("2d");
@@ -174,40 +197,52 @@ canvas.height=window.innerHeight;
 let particles=[];
 
 function firework(){
+
 let x=Math.random()*canvas.width;
 let y=Math.random()*canvas.height/2;
 
 for(let i=0;i<30;i++){
+
 particles.push({
 x:x,
 y:y,
 vx:(Math.random()-0.5)*5,
 vy:(Math.random()-0.5)*5,
 life:100
+
 });
+
 }
+
 }
 
 function animate(){
+
 ctx.clearRect(0,0,canvas.width,canvas.height);
 
 particles.forEach((p,i)=>{
+
 p.x+=p.vx;
 p.y+=p.vy;
 p.life--;
 
 ctx.beginPath();
 ctx.arc(p.x,p.y,2,0,Math.PI*2);
-ctx.fillStyle="white";
+ctx.fillStyle="#a6d8ff";
 ctx.fill();
 
-if(p.life<=0) particles.splice(i,1);
+if(p.life<=0){
+particles.splice(i,1);
+}
+
 });
 
 requestAnimationFrame(animate);
+
 }
 
 setInterval(firework,1200);
+
 animate();
 
 </script></body>
