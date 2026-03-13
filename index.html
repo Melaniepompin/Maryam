@@ -13,15 +13,11 @@ text-align:center;
 overflow-x:hidden;
 }
 
-/* Title */
-
 h1{
 margin-top:60px;
 font-size:45px;
 color:#a6d8ff;
 }
-
-/* Letter Card */
 
 .card{
 width:80%;
@@ -39,8 +35,6 @@ transform:scale(0);
 @keyframes openLetter{
 to{transform:scale(1);}
 }
-
-/* Typing text */
 
 #message{
 font-size:20px;
@@ -91,8 +85,6 @@ animation:fall 8s linear infinite;
 100%{transform:translateY(110vh);}
 }
 
-/* Fireworks */
-
 canvas{
 position:fixed;
 top:0;
@@ -107,8 +99,6 @@ pointer-events:none;
 </audio><canvas id="fireworks"></canvas>
 
 <script>
-
-/* LETTER TEXT */
 
 const text = `Happy Belated Birthday Maryam ❤️
 
@@ -134,9 +124,6 @@ Once again,
 
 Happy Belated Birthday Maryam 🎂💙`;
 
-
-/* TYPEWRITER EFFECT */
-
 let index=0;
 
 function typeWriter(){
@@ -149,8 +136,7 @@ setTimeout(typeWriter,35);
 
 typeWriter();
 
-
-/* FLOATING HEARTS */
+/* Floating Hearts */
 
 setInterval(()=>{
 let heart=document.createElement("div");
@@ -167,15 +153,14 @@ heart.remove();
 
 },500);
 
-
-/* FALLING ROSES */
+/* Falling Roses */
 
 setInterval(()=>{
 let rose=document.createElement("div");
 rose.className="rose";
 rose.innerHTML="🌹";
 rose.style.left=Math.random()*100+"vw";
-rose.style.fontSize=(18+Math.random()*20)+"px;
+rose.style.fontSize=(18+Math.random()*20)+"px";
 
 document.body.appendChild(rose);
 
@@ -185,8 +170,7 @@ rose.remove();
 
 },700);
 
-
-/* FIREWORKS */
+/* Fireworks */
 
 const canvas=document.getElementById("fireworks");
 const ctx=canvas.getContext("2d");
