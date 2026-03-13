@@ -78,7 +78,7 @@ opacity:0;
 <div class="container">
 
 <div class="title">
-Happy Belated Birthday Mariam ❤️
+Happy Belated Birthday Maryam ❤️
 </div>
 
 <div id="text"></div>
@@ -91,8 +91,6 @@ const message = `Even though your special day has already passed, I still wanted
 
 Sometimes words cannot fully explain how much someone means, but I still wanted to try. You are someone truly special, someone whose kindness, patience, and warmth can make a simple moment feel beautiful.
 
-Your presence brings a calm and happiness that is rare, and the way you care, speak, and treat people shows the goodness inside your heart.
-
 On this new chapter of your life, I pray that Allah fills your days with peace, your heart with joy, and your path with success and blessings.
 
 May this year bring you more laughter, more unforgettable memories, more opportunities, and many moments that remind you how valued and appreciated you truly are.
@@ -101,7 +99,7 @@ Even if this message comes after your birthday has passed, the sincerity of the 
 
 So once again from the heart:
 
-Happy Belated Birthday Mariam ❤️
+Happy Belated Birthday Maryam ❤️
 
 May the days ahead bring you happiness, peace, success, and beautiful surprises.`;
 
