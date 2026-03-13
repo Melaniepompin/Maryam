@@ -70,16 +70,16 @@ opacity:0;
 
 <div class="container">
 
-<div id="title" class="title"></div>
-<div id="text"></div>
+<div id="text" class="title"></div>
 
 </div>
 
 <script>
 
-// Typing for title first
-const titleMessage = "Happy Belated Birthday Maryam ❤️";
-const fullMessage = `Even though your special day has already passed, I still wanted to create something meaningful for you, something small but sincere that carries my wishes and appreciation for the wonderful person you are.
+// Combine title + message for continuous typing
+const fullMessage = `Happy Belated Birthday Maryam ❤️
+
+Even though your special day has already passed, I still wanted to create something meaningful for you, something small but sincere that carries my wishes and appreciation for the wonderful person you are.
 
 Sometimes words cannot fully explain how much someone means, but I still wanted to try. You are someone truly special, someone whose kindness, patience, and warmth can make a simple moment feel beautiful.
 
@@ -95,24 +95,20 @@ Happy Belated Birthday Maryam ❤️
 
 May the days ahead bring you happiness, peace, success, and beautiful surprises.`;
 
-let titleIndex = 0;
-let textIndex = 0;
-const titleSpeed = 200; // slow typing for title
-const textSpeed = 35;   // normal typing for body
+let i = 0;
+const speed = 50; // speed of typing (ms per character)
 
-function typeTitle(){
-    if(titleIndex < titleMessage.length){
-        document.getElementById("title").innerHTML += titleMessage.charAt(titleIndex);
-        titleIndex++;
-        setTimeout(typeTitle, titleSpeed);
-    } else {
-        // Start typing the full message after title finishes
-        typeMessage();
+function typeWriter(){
+    if(i < fullMessage.length){
+        document.getElementById("text").innerHTML += fullMessage.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
     }
 }
 
-function typeMessage(){
-    if(textIndex < fullMessage.length){
-        document.getElementById("text").innerHTML += fullMessage.charAt(textIndex);
-        textIndex++;
-        setTimeout(typeMessage, text
+typeWriter();
+
+// floating hearts
+setInterval(function(){
+    let heart = document.createElement("div");
+    heart.inner
