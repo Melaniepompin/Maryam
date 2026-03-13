@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For Maryam ❤️</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300&display=swap" rel="stylesheet">
 
 <style>
-
 body{
 margin:0;
 padding:0;
@@ -23,26 +23,27 @@ overflow:hidden;
 }
 
 .container{
-width:75%;
+width:90%;
 max-width:900px;
 }
 
 .title{
 font-family:'Great Vibes',cursive;
-font-size:65px;
+font-size:55px;
 color:#ff7aa2;
-margin-bottom:40px;
-text-shadow:0 0 25px rgba(255,122,162,0.9);
+margin-bottom:30px;
+text-shadow:0 0 20px rgba(255,122,162,0.8);
+word-break: break-word;
 }
 
 #text{
-font-size:22px;
-line-height:1.8;
-white-space:pre-line;
+font-size:20px;
+line-height:1.7;
+white-space:pre-wrap;
+text-align:left;
 }
 
 /* floating hearts */
-
 .heart{
 position:absolute;
 bottom:-50px;
@@ -52,17 +53,14 @@ opacity:0.8;
 }
 
 @keyframes float{
-
 0%{
 transform:translateY(0) scale(1);
 opacity:1;
 }
-
 100%{
 transform:translateY(-1000px) scale(1.5);
 opacity:0;
 }
-
 }
 
 </style>
@@ -72,17 +70,16 @@ opacity:0;
 
 <div class="container">
 
-<div class="title">
-Happy Belated Birthday Maryam ❤️
-</div>
-
+<div id="title" class="title"></div>
 <div id="text"></div>
 
 </div>
 
 <script>
 
-const message = `Even though your special day has already passed, I still wanted to create something meaningful for you, something small but sincere that carries my wishes and appreciation for the wonderful person you are.
+// Typing for title first
+const titleMessage = "Happy Belated Birthday Maryam ❤️";
+const fullMessage = `Even though your special day has already passed, I still wanted to create something meaningful for you, something small but sincere that carries my wishes and appreciation for the wonderful person you are.
 
 Sometimes words cannot fully explain how much someone means, but I still wanted to try. You are someone truly special, someone whose kindness, patience, and warmth can make a simple moment feel beautiful.
 
@@ -98,12 +95,24 @@ Happy Belated Birthday Maryam ❤️
 
 May the days ahead bring you happiness, peace, success, and beautiful surprises.`;
 
-let i = 0;
+let titleIndex = 0;
+let textIndex = 0;
+const titleSpeed = 200; // slow typing for title
+const textSpeed = 35;   // normal typing for body
 
-let speed = 55;
+function typeTitle(){
+    if(titleIndex < titleMessage.length){
+        document.getElementById("title").innerHTML += titleMessage.charAt(titleIndex);
+        titleIndex++;
+        setTimeout(typeTitle, titleSpeed);
+    } else {
+        // Start typing the full message after title finishes
+        typeMessage();
+    }
+}
 
-function typeWriter(){
-
-if(i < message.length){
-
-document.getElementById("text").innerHTML += message
+function typeMessage(){
+    if(textIndex < fullMessage.length){
+        document.getElementById("text").innerHTML += fullMessage.charAt(textIndex);
+        textIndex++;
+        setTimeout(typeMessage, text
