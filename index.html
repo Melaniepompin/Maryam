@@ -1,13 +1,8 @@
-from flask import Flask, render_template_string
-
-app = Flask(__name__)
-
-page = """
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>For Mariam ❤️</title>
+<title>For Maryam ❤️</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300&display=swap" rel="stylesheet">
 
@@ -103,7 +98,6 @@ Happy Belated Birthday Maryam ❤️
 
 May the days ahead bring you happiness, peace, success, and beautiful surprises.`;
 
-
 let i = 0;
 
 let speed = 55;
@@ -112,52 +106,4 @@ function typeWriter(){
 
 if(i < message.length){
 
-document.getElementById("text").innerHTML += message.charAt(i);
-
-i++;
-
-setTimeout(typeWriter, speed);
-
-}
-
-}
-
-typeWriter();
-
-
-// floating hearts
-
-setInterval(function(){
-
-let heart = document.createElement("div");
-
-heart.innerHTML = "❤️";
-
-heart.className = "heart";
-
-heart.style.left = Math.random()*100 + "vw";
-
-heart.style.fontSize = (20 + Math.random()*25) + "px";
-
-document.body.appendChild(heart);
-
-setTimeout(function(){
-
-heart.remove();
-
-},8000);
-
-},400);
-
-</script>
-
-</body>
-</html>
-"""
-
-@app.route("/")
-def home():
-    return render_template_string(page)
-
-if __name__ == "__main__":
-    app.run(debug=True)
+document.getElementById("text").innerHTML += message
